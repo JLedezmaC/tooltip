@@ -1,0 +1,51 @@
+body{
+    width: 100px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+/*Texto o elemento del cual será referencia el tooltip*/
+
+.tooltip{
+    position: relative;
+    width: 250px;
+}
+
+
+/*Comportamiento del tooltip para volver a aparecer*/
+
+.tooltip:hover .tooltipText{
+    display: inline-block;
+}
+/*Especificaciones para modificar el comportamiento 
+para que desaparezca y ademas agregar un poco de diseño al mismo tooltip*/
+.tooltipText{
+    display: none;
+    position: absolute;
+    line-height: 30px;
+    z-index: 1;
+    background-color: gray;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    left: 0;
+    right: 0;
+    bottom: -68px;
+}
+
+
+/*Usamos el selector after para lo que
+sucede despues de estar encima del area del 
+elemento al cual queremos agregar un tooltip*/
+
+.tooltipText::after{
+    content: "";
+    display: block;
+    border-bottom: 7px solid gray;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    top: -7px;
+    left: 118px;
+}
